@@ -1,0 +1,7 @@
+ansible all -m user -a "user=bob"
+ansible all -m command -a "id lisa"
+
+ansible all -m user -a "user=bob state=absent"
+ansible all -m command -a "id bob"
+
+ansible all -m ping
