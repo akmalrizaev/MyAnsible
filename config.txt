@@ -2,6 +2,14 @@
 OS - CentOS 8
 Name - akmal
 IP - 192.168.65.130/24
+
+user - ansible
+/etc/sudoers.d/ansible -> ansible ALL=(ALL) NOPASSWD: ALL
+ssh-keygen
+ssh-copy-id "name or ip"
+yum install python3
+alternatives --set python /usr/bin/python3
+pip3 install ansible --user
 ######################
 
 ### Managed Nodes ###
@@ -23,6 +31,12 @@ OS - Ubuntu 20.04 Server
 Name - centos1
 Ip - 192.168.65.131/24
 ######################
+
+user - ansible
+/etc/sudoers.d/ansible -> ansible ALL=(ALL) NOPASSWD: ALL
+yum install python3    (apt install python3)
+alternatives --set python /usr/bin/python3
+
 
 ##############################
 
