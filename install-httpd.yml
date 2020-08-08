@@ -1,0 +1,24 @@
+---
+-  name:  install httpd
+   hosts: centos1
+   tasks:
+     -  name: install package
+        package:
+          name:  httpd
+          state:  present
+     -  name: create an index.html
+        copy:
+          content:  'welcome to My webserver :)'
+          dest:  /var/www/html/index.html
+     -  name:  start the service
+        service:
+          name:  httpd
+          state:  started
+          enabled:  true
+     -  name:  open firewall
+        firewalld:
+          service:  http
+          permanent:  yes
+          state:  enabled
+...
+ 
